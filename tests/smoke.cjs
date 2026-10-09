@@ -21,3 +21,9 @@ for(let region=0;region<12;region++)for(let side=0;side<3;side++){
  const card=nodes['#dialogtext'].children[0].children[side];const rewardButton=card.children.find(c=>c.textContent==='보상 받기');assert.ok(rewardButton);rewardButton.click();check(`game.p.side[${region}][${side}].done===true`);run('dialog.close()');
 }
 console.log('PASS: 24 map types/72 dungeon floors reachable; 108 story and 36 side quest rewards; defense, escort, puzzle, shop/equipment/consumables, tower, save validation and rendering.');
+// The unified action must fight nearby enemies before opening an NPC dialog.
+run('dialog.close();game.enter(0);game.enemies=[];game.p.x=game.world.npcs[0].x;game.p.y=game.world.npcs[0].y;');
+check("game.primaryMode()==='talk'");run('game.primaryAction()');check('dialog.open');run('dialog.close();game.cool.attack=0;game.enemies=[{x:game.p.x+40,y:game.p.y,hp:100,max:100,dead:false,seed:1}];game.primaryAction()');check('!dialog.open&&game.enemies[0].hp<100');
+// Collecting an item stops held input and removes the used item from action targeting.
+run("game.enemies=[];game.world.npcs=[];game.world.objects=[game.world.objects.find(o=>o.type==='memory')];game.p.x=game.world.objects[0].x;game.p.y=game.world.objects[0].y;game.collected.clear();game.keys.add(' ');");check("game.primaryMode()==='inspect'");run('game.primaryAction()');check("game.collected.has(game.world.objects[0].id)&&!game.keys.has(' ')&&game.primaryMode()==='attack'");
+console.log('PASS: unified action NPC dialog, enemy priority, collection and held-input release.');
