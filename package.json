@@ -1,0 +1,7 @@
+{
+  "name": "moonwind-chronicles",
+  "version": "2.0.0",
+  "private": true,
+  "description": "2D pixel action RPG: twelve moons",
+  "scripts": { "start": "node serve.mjs", "test": "node tests/smoke.cjs" }
+}
