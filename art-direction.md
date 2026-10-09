@@ -10,3 +10,7 @@
 - 주민 배경 보정: Remove the background completely and output genuine transparent alpha. Preserve all eight characters, arrangement exactly 4 columns by 2 rows, clothing, pose, full feet, colors and details. No drop shadows, no glow clouds. Background extraction only. Empty spaces between figures transparent.
 
 이미지 원본은 generated_images에 보존되어 있으며, 게임은 위 세 WebP 자산을 사용합니다.
+
+## 아이템 아이콘 (v13)
+생성 방식: built-in image_gen. 최종 자산: dist/assets/items-2d.webp.
+Prompt: Production inventory icon atlas for a cozy Korean fantasy 2D RPG. Smooth hand-painted anime game icons, polished shading, clean readable silhouettes, jewel colors, no pixel art. Exactly 4 columns by 4 rows, 16 separate centered icons in equal square cells with generous empty transparent padding, no overlaps, NO text, numbers, frames or labels, genuinely transparent background. Row1: red healing potion, blue mana potion, warm rice meal with dumpling in wooden bowl, protective yellow paper talisman with moon emblem. Row2: silver Korean fantasy sword with gold guard, curved wooden longbow, blue gem magic staff, folded blue hanbok robe. Row3: steel chest armor, green brown leather archer vest, purple embroidered wizard robe, green wind knot. Row4: lotus pendant necklace, golden celestial seal medallion, luminous blue enhancement crystals, medicinal herbs. Same camera and scale, full objects inside their own cells.
