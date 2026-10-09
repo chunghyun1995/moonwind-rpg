@@ -17,6 +17,8 @@
 
 ## 배포
 
-정적 배포 디렉터리는 `dist/`입니다. GitHub Pages는 Settings → Pages → GitHub Actions에서 활성화하면 포함된 워크플로가 배포합니다.
+정적 배포 디렉터리는 `dist/`입니다. GitHub Pages는 Settings → Pages → Deploy from a branch → main / (root)로 배포합니다. 루트의 `index.html`은 게임으로 이동합니다.
+
+플레이: https://chunghyun1995.github.io/moonwind-rpg/
 
 모든 지도와 캐릭터는 코드로 직접 그렸으며 기존 게임의 그래픽, 이름, 음원을 사용하지 않습니다.
